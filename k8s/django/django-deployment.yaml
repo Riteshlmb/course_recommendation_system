@@ -1,0 +1,26 @@
+# django-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-backend
+  namespace: crs-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django-backend
+  template:
+    metadata:
+      labels:
+        app: django-backend
+    spec:
+      containers:
+      - name: django
+        image: sntiwari07/course_recommendation_system_web:latest
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: django-config
+        - secretRef:
+            name: django-secret

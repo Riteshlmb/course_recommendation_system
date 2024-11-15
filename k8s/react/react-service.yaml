@@ -1,0 +1,11 @@
+# react-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-service
+  namespace: crs-namespace
+spec:
+  ports:
+  - port: 3000
+  selector:
+    app: react-frontend

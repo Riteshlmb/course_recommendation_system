@@ -1,0 +1,11 @@
+# django-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-service
+  namespace: crs-namespace
+spec:
+  ports:
+  - port: 8000
+  selector:
+    app: django-backend

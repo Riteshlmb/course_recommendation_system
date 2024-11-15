@@ -1,0 +1,9 @@
+# django-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: django-config
+  namespace: crs-namespace
+data:
+  DJANGO_SETTINGS_MODULE: "course_recommendation_system.settings"
+  SECRET_KEY: "django-insecure-md#ke9-2o61v_z*dbp-h3bzmu&*b7bv!vxtg*f)^k=6%x&ouq%"
